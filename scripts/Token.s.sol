@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-import "@std/console.sol";
-import "@std/Script.sol";
+import {Script} from "@std/Script.sol";
 
 import {Token} from "../src/Token.sol";
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.18;
 
-import "@std/Test.sol";
+import {Test} from "@std/Test.sol";
 import "../src/Token.sol";
 
 /// @title Test for {Token}
