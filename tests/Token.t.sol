@@ -2,7 +2,7 @@
 pragma solidity ^0.8.18;
 
 import {Test} from "@std/Test.sol";
-import "../src/Token.sol";
+import {Token} from "../src/Token.sol";
 
 /// @title Test for {Token}
 /// @author Olivier Winkler (https://github.com/owieth)
