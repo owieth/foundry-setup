@@ -21,7 +21,9 @@ Layout of Functions (inside **.sol after modifiers):
 - public
 - internal
 - private
-- view & pure functions
+- view & pure functions (last per group -> external, public, ...)
+
+More --> [STYLE.md](./STYLE.md)
 
 ## Local Setup
 
