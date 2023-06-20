@@ -1,0 +1,1 @@
+deploy-sepolia:; forge script scripts/Token.s.sol --rpc-url sepolia --broadcast --verify -vvvvvv
