@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/owieth/foundry-setup/issues"
   },
-  "homepage": "https://github.com/owieth/foundry-setup#readme"
+  "homepage": "https://github.com/owieth/foundry-setup#readme",
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "solhint": "^3.4.1"
+  }
 }
