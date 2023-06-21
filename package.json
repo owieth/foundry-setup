@@ -7,6 +7,8 @@
     "test": "tests"
   },
   "scripts": {
+    "lint": "yarn lint:sol && yarn prettier",
+    "lint:sol": "forge fmt --check && yarn solhint \"{script,src,test}/**/*.sol\"",
     "prettier": "prettier --write \"**/*.{json,md,yml}\""
   },
   "repository": {
