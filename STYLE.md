@@ -7,12 +7,12 @@ Our starting point is the [official Solidity Style Guide](https://solidity.readt
 ### Code Organization
 
 - Group functionality together. E.g. Declare structs, events, and helper functions near the functions that use them. This is helpful when reading code because the related pieces are localized. It is also consistent with inheritance and libraries, which are separate pieces of code designed for a specific goal.
-    - Why not follow the Solidity recommendation of grouping by visibility? Visibility is clearly defined next to the method signature, making it trivial to check. However, searching can be deceiving because of inherited methods. Given this inconsistency in grouping, we find it easier to read and more consistent to organize code around functionality. Additionally, we recommend testing the public interface for any Solidity contract to ensure it only exposes expected methods.
+  - Why not follow the Solidity recommendation of grouping by visibility? Visibility is clearly defined next to the method signature, making it trivial to check. However, searching can be deceiving because of inherited methods. Given this inconsistency in grouping, we find it easier to read and more consistent to organize code around functionality. Additionally, we recommend testing the public interface for any Solidity contract to ensure it only exposes expected methods.
 
 ### Delineate Unaudited Code
 
 - In a large repo it is worthwhile to keep code that has not yet been audited separate from the code that has been audited. This allows you to easily keep track of which files need to be reviewed.
-    - E.g. we keep unaudited code in a directory named `dev`. Only once it has been audited we move the audited files out of `dev` and only then is it considered safe to deploy.
+  - E.g. we keep unaudited code in a directory named `dev`. Only once it has been audited we move the audited files out of `dev` and only then is it considered safe to deploy.
 
 ## Variables
 
@@ -115,12 +115,12 @@ constructor(address priceFeed) {
 ### Naming
 
 - Function names should start with imperative verbs, not nouns or other tenses.
-    - `requestData` not `dataRequest`
-    - `approve` not `approved`
+  - `requestData` not `dataRequest`
+  - `approve` not `approved`
 - Prefix private and internal methods with an underscore. There should never be a publicly callable method starting with an underscore.
-    - E.g. `_setOwner(address)`
+  - E.g. `_setOwner(address)`
 - Prefix your public getters with `get` and your public setters with `set`.
-    - `getConfig` and `setConfig`.
+  - `getConfig` and `setConfig`.
 
 ## Modifiers
 
@@ -144,7 +144,7 @@ There are two common classes of modifiers, and their name should be prefixed acc
 
 ### Naming
 
-- When possible event names should correspond to the method they are in or the action that is being taken. Events preferably follow the format <subject><actionPerformed>, where the action performed is the past tense of the imperative verb in the method name.  e.g. calling `setConfig` should emit an event called `ConfigSet`, not `ConfigUpdated` in a method named `setConfig`.
+- When possible event names should correspond to the method they are in or the action that is being taken. Events preferably follow the format <subject><actionPerformed>, where the action performed is the past tense of the imperative verb in the method name. e.g. calling `setConfig` should emit an event called `ConfigSet`, not `ConfigUpdated` in a method named `setConfig`.
 
 ## Errors
 
@@ -183,13 +183,15 @@ Always wrap the result statement of your `if` conditions in a closure, even if i
 Bad:
 
 ```javascript
-  if (condition) statement;
+if (condition) statement;
 ```
 
 Good:
 
 ```javascript
-  if (condition) { statement; }
+if (condition) {
+  statement;
+}
 ```
 
 ## Interfaces
@@ -206,9 +208,9 @@ Good:
 ## Vendor Dependencies
 
 - That’s it, vendor your Solidity dependencies. Supply chain attacks are all the rage these days. There is not yet a silver bullet for best way to vendor, it depends on the size of your project and your needs. You should be as explicit as possible about where the code comes from and make sure that this is enforced in some way; e.g. reference a hash. Some options:
-    - NPM packages work for repos already in the JavaScript ecosystem. If you go this route you should lock to a hash of the repo or use a proxy registry like GitHub Packages.
-    - Git submodules are great if you don’t mind git submodules.
-    - Copy and paste the code into a `vendor` directory. Record attribution of the code and license in the repo along with the commit or version that you pulled the code from.
+  - NPM packages work for repos already in the JavaScript ecosystem. If you go this route you should lock to a hash of the repo or use a proxy registry like GitHub Packages.
+  - Git submodules are great if you don’t mind git submodules.
+  - Copy and paste the code into a `vendor` directory. Record attribution of the code and license in the repo along with the commit or version that you pulled the code from.
 
 ## Common Behaviors
 
@@ -219,7 +221,7 @@ Good:
 ### Use Factories
 
 - If you expect multiple instances of a contract to be deployed, it is probably best to [build a factory](https://www.quicknode.com/guides/solidity/how-to-create-a-smart-contract-factory-in-solidity-using-hardhat) as this allows for simpler deployments later. Additionally it reduces the burden of verifying the correctness of the contract deployment. If many people have to deploy an instance of a contract then doing so with a contract makes it much easier for verification because instead of checking the code hash and/or the compiler and maybe the source code, you only have to check that the contract was deployed through a factory.
-- Factories can add some pain when deploying with immutable variables. In general it is difficult to parse those out immutable variables from internal transactions. There is nothing inherently wrong with contracts deployed in this manner  but at the time of writing they may not easily verify on Etherscan.
+- Factories can add some pain when deploying with immutable variables. In general it is difficult to parse those out immutable variables from internal transactions. There is nothing inherently wrong with contracts deployed in this manner but at the time of writing they may not easily verify on Etherscan.
 
 ### Call with Exact Gas
 
@@ -228,7 +230,7 @@ Good:
 ## Picking a Pragma
 
 - If a contract or library is expected to be imported by outside parties then the pragma should be kept as loose as possible without sacrificing safety. We publish versions for every minor semver version of Solidity, and maintain a corresponding set of tests for each published version.
-    - Examples: libraries, interfaces, abstract contracts, and contracts expected to be inherited from
+  - Examples: libraries, interfaces, abstract contracts, and contracts expected to be inherited from
 - Otherwise, Solidity contracts should have a pragma which is locked to a specific version.
-    - Example: Most concrete contracts.
+  - Example: Most concrete contracts.
 - Avoid changing pragmas after audit. Unless there is a bug that has affects your contract, then you should try to stick to a known good pragma. In practice this means we typically only support one (occasionally two) pragma for any “major”(minor by semver naming) Solidity version.

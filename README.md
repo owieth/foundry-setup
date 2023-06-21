@@ -2,7 +2,8 @@
 
 ## How to structure a Solidity Contract?
 
-Layout of Contract (**.sol):
+Layout of Contract (\*\*.sol):
+
 - version
 - imports
 - errors
@@ -13,7 +14,8 @@ Layout of Contract (**.sol):
 - Modifiers
 - Functions
 
-Layout of Functions (inside **.sol after modifiers):
+Layout of Functions (inside \*\*.sol after modifiers):
+
 - constructor
 - receive function (if exists)
 - fallback function (if exists)
@@ -27,7 +29,7 @@ More --> [STYLE.md](./STYLE.md)
 
 ## Local Setup
 
-Consolidate ```.env.local``` fill out ```.env```
+Consolidate `.env.local` fill out `.env`
 
 ### Deploy contracts
 
