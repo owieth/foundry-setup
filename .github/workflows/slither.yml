@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Yarn
-      run: npm install --global yarn
+        run: npm install --global yarn
 
       - name: Update Yarn
-      run: yarn upgrade
+        run: yarn upgrade
 
       - name: Run Slither
         uses: actions/checkout@v3
