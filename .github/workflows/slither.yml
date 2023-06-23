@@ -12,7 +12,7 @@ jobs:
         run: npm install --global yarn
 
       - name: Update Yarn
-        run: yarn upgrade
+        run: yarn install && yarn upgrade
 
       - name: Run Slither
         uses: crytic/slither-action@v0.3.0
