@@ -6,8 +6,8 @@ Layout of Contract (\*\*.sol):
 
 - version
 - imports
-- errors
 - interfaces, libraries, contracts
+- errors
 - Type declarations
 - State variables
 - Events
