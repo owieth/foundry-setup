@@ -20,3 +20,6 @@ endif
 
 deploy:
 	@forge script scripts/Token.s.sol $(NETWORK_ARGS)
+
+slither:
+	slither .
