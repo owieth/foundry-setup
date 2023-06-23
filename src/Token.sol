@@ -50,7 +50,7 @@ contract Token is ERC20, Ownable {
     //////////////////////////////////////////////////////////////*/
 
     /// @dev Explain to a developer any extra details
-    uint256 public s_number;
+    uint256 private s_number;
 
     /*//////////////////////////////////////////////////////////////
                                 EVENTS
@@ -102,6 +102,12 @@ contract Token is ERC20, Ownable {
     /// @dev Explain to a developer any extra details
     function incrementNumber() public {
         s_number++;
+    }
+
+    /// @notice Explain to an end user what this does
+    /// @dev Explain to a developer any extra details
+    function getCurrentNumber() public view returns (uint256) {
+        return s_number;
     }
 
     /*//////////////////////////////////////////////////////////////

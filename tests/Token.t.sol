@@ -16,12 +16,12 @@ contract TokenTest is Test {
     }
 
     function testIncrement() public {
-        token.increment();
-        assertEq(token.number(), 1);
+        token.incrementNumber();
+        assertEq(token.getCurrentNumber(), 1);
     }
 
     function testSetNumber(uint256 x) public {
         token.setNumber(x);
-        assertEq(token.number(), x);
+        assertEq(token.getCurrentNumber(), x);
     }
 }
