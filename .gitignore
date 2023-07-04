@@ -15,7 +15,10 @@ out/
 docs/
 
 # Dotenv file
+.env.*
 .env
+!.env.example
+
 
 # MacOS file
 .DS_Store
