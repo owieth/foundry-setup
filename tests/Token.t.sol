@@ -11,7 +11,7 @@ contract TokenTest is Test {
     Token public token;
 
     function setUp() public {
-        token = new Token();
+        token = new Token(msg.sender);
         token.setNumber(0);
     }
 

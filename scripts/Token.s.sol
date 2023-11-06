@@ -15,7 +15,7 @@ contract Deploy is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        new Token();
+        new Token(msg.sender);
 
         vm.stopBroadcast();
     }

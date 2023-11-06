@@ -81,7 +81,7 @@ contract Token is ERC20, Ownable {
                                CONSTRUCTOR
     //////////////////////////////////////////////////////////////*/
 
-    constructor() ERC20("Token", "TKN") { }
+    constructor(address initialOwner) ERC20("Token", "TKN") Ownable(initialOwner) { }
 
     /*//////////////////////////////////////////////////////////////
                                EXTERNAL
