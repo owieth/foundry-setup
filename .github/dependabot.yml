@@ -11,5 +11,11 @@ updates:
   - package-ecosystem: 'gitsubmodule'
     directory: '/'
     schedule:
-      # Check for updates to GitHub Actions every week
+      # Check for updates to git submodules every week
+      interval: 'weekly'
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      # Check for updates to npm packages every week
       interval: 'weekly'
