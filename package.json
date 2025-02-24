@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/owieth/foundry-setup#readme",
   "devDependencies": {
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "solhint": "^5.0.5"
   }
 }
