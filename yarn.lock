@@ -130,11 +130,6 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-antlr4@^4.13.1-patch-1:
-  version "4.13.2"
-  resolved "https://registry.yarnpkg.com/antlr4/-/antlr4-4.13.2.tgz#0d084ad0e32620482a9c3a0e2470c02e72e4006d"
-  integrity sha512-QiVbZhyy4xAZ17UPEuG3YTOt8ZaoeOR1CvEAqrEsDBsOqINslaB147i9xqljZqoyf5S+EUlGStaj+t22LT9MOg==
-
 argparse@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
@@ -663,15 +658,14 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-solhint@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.0.2.tgz#9c78abf3a9d3be10d9886ee058845956dea83915"
-  integrity sha512-RInN0tz9FVR4eYlyLS0Pk8iJP3WdfVmmMJR9FIUxe9bKHgAPE8OYUXcMd5PGi5fO5BnZw32e0qMYcJZgH9MiBg==
+solhint@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.0.3.tgz#467a65bc479a1d249fef881d0f44ecb9864cc34c"
+  integrity sha512-LYiy1bN8X9eUsti13mbS4fY6ILVxhP6VoOgqbHxCsHl5VPnxOWf7U1V9ZvgizxdInKBMW82D1FNJO+daAcWHbA==
   dependencies:
     "@solidity-parser/parser" "^0.20.2"
     ajv "^6.12.6"
     ajv-errors "^1.0.1"
-    antlr4 "^4.13.1-patch-1"
     ast-parents "^0.0.1"
     better-ajv-errors "^2.0.2"
     chalk "^4.1.2"
