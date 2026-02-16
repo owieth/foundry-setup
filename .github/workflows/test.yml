@@ -1,18 +1,11 @@
-name: Build & Test
+name: Test
 
 on:
   push: {}
   workflow_dispatch: {}
 
-env:
-  FOUNDRY_PROFILE: ci
-
 jobs:
-  check:
-    strategy:
-      fail-fast: true
-
-    name: Foundry project workflow
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -21,8 +14,6 @@ jobs:
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
 
       - name: Run Forge build
         run: |
@@ -30,7 +21,11 @@ jobs:
           forge build --sizes
         id: build
 
-      - name: Run Forge tests
-        run: |
-          forge test -vvv
-        id: test
+      - name: Test
+        run: forge test -vvv
+
+      - name: Check formatting
+        run: forge fmt --check
+
+      - name: Gas snapshot
+        run: forge snapshot --check --tolerance 5
