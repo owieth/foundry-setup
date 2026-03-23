@@ -24,4 +24,8 @@ mainnet = { key = "${ETHERSCAN_API_KEY}" }
 sepolia = { key = "${ETHERSCAN_API_KEY}" }
 mumbai = { key = "${ETHERSCAN_API_KEY}" }
 
+[doc]
+out = "docs"
+title = "Foundry Setup"
+
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
