@@ -1,68 +1,93 @@
-# Foundry Setup Template Repo
+# Foundry Setup Template
 
-## How to structure a Solidity Contract?
+[![Test](https://github.com/owieth/foundry-setup/actions/workflows/test.yml/badge.svg)](https://github.com/owieth/foundry-setup/actions/workflows/test.yml)
+[![Slither](https://github.com/owieth/foundry-setup/actions/workflows/slither.yml/badge.svg)](https://github.com/owieth/foundry-setup/actions/workflows/slither.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Foundry](https://img.shields.io/badge/Built%20with-Foundry-FFDB1C)
 
-Layout of Contract (\*\*.sol):
+A template repository for Foundry/Solidity projects with CI, static analysis, and auto-generated docs.
+
+## Quick Start
+
+**Prerequisites:** [Install Foundry](https://book.getfoundry.sh/getting-started/installation)
+
+```shell
+# Clone and set up
+git clone https://github.com/owieth/foundry-setup
+cd foundry-setup
+forge install
+
+# Copy environment variables
+cp .env.example .env
+# Fill in your values, then:
+source .env
+```
+
+## Local Development
+
+### Build & Test
+
+```shell
+forge build
+forge test -vvvv
+forge snapshot
+```
+
+### Format
+
+```shell
+forge fmt
+forge fmt --check
+```
+
+### Generate Docs
+
+```shell
+forge doc
+forge doc --serve  # preview at http://localhost:3000
+```
+
+### Deploy
+
+```shell
+source .env
+forge script script/<Script>.s.sol:<Contract> --rpc-url <chain> --broadcast --verify -vvvvv
+```
+
+### Local Fork with Anvil
+
+```shell
+# Fresh local chain
+anvil
+
+# Fork Sepolia
+anvil -f https://eth-sepolia.g.alchemy.com/v2/<your_api_key>
+```
+
+## Contract Layout
+
+Layout of `**.sol`:
 
 - version
 - imports
 - interfaces, libraries, contracts
-- usings (using ... for ...)
+- usings (`using ... for ...`)
 - errors
-- Type declarations
-- State variables
-- Events
-- Modifiers
-- Functions
+- type declarations
+- state variables
+- events
+- modifiers
+- functions
 
-Layout of Functions (inside \*\*.sol after modifiers):
+Layout of functions (inside `**.sol` after modifiers):
 
 - constructor
-- receive function (if exists)
-- fallback function (if exists)
+- receive (if exists)
+- fallback (if exists)
 - external
 - public
 - internal
 - private
-- view & pure functions (last per group -> external, public, ...)
+- view & pure (last per visibility group)
 
-More --> [STYLE.md](./STYLE.md)
-
-## Local Setup
-
-Consolidate `.env.local` fill out `.env`
-
-### Deploy contracts
-
-```shell
-# To give our shell access to our environment variables
-source .env
-# To deploy and verify our contract
-forge script script/<scriptname>.s.sol:<contractname> --rpc-url <chain> --broadcast --verify -vvvvv
-
-# concatenate the following if you want to verify the contract
-# --verify -vvvvv
-
-```
-
-### Test contracts
-
-Using foundry
-
-```shell
-forge test
-# for more details, logging with emit, add verbosity 1 up to 5 v's
-forge test -vvvv
-```
-
-### Local Blockchain with Anvil (Foundry)
-
-Set up a local blockchain like this
-
-```shell
-# set up fresh local blockchain
-anvil
-
-# if you want to fork an existing blockchain, because you need to interact with existing contracts, e.g on goerli testnet
-anvil -f https://eth-goerli.g.alchemy.com/v2/<your_api_keys>
-```
+More → [STYLE.md](./STYLE.md)
