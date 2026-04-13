@@ -20,7 +20,7 @@ jobs:
           slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
       - name: Create/update checklist as PR comment
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         if: github.event_name == 'pull_request'
         env:
           REPORT: ${{ steps.slither.outputs.stdout }}
