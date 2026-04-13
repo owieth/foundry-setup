@@ -15,7 +15,7 @@ jobs:
         uses: crytic/slither-action@v0.4.2
         id: slither
         with:
-          node-version: 18
+          node-version: 20
           fail-on: medium
           slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
@@ -26,7 +26,27 @@ jobs:
           REPORT: ${{ steps.slither.outputs.stdout }}
         with:
           script: |
-            const script = require('.github/scripts/comment')
             const header = '# Slither report'
             const body = process.env.REPORT
-            await script({ github, context, header, body })
+            const comment = [header, body].join('\n\n')
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            })
+            const existing = comments.find(c => c.body.startsWith(header))
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: comment,
+              })
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: comment,
+              })
+            }
