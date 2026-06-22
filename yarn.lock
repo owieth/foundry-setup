@@ -86,11 +86,6 @@
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.4.tgz#b979ebad3919799c979b17c72621c0bc0a31c6c4"
   integrity sha512-1m0bIFVc7eJWyve9S0RnuRgcQqF/Xd5QsUZAZeQFr1Q3/p9JWoQQEqmVy+DPTNpGXwhgIetAoYF8JSc33q29QA==
 
-ajv-errors@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-3.0.0.tgz#e54f299f3a3d30fe144161e5f0d8d51196c527bc"
-  integrity sha512-V3wD15YHfHz6y0KdhYFjyy9vWtEVALT9UrxfN3zqlI6dMioHnJrqOYfyPKol3oqrnCM9uwkcdCwkJ0WUcbLMTQ==
-
 ajv@^8.0.1, ajv@^8.18.0:
   version "8.18.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.18.0.tgz#8864186b6738d003eb3a933172bb3833e10cefbc"
@@ -624,14 +619,13 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-solhint@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.2.1.tgz#05af1624365969e7350da8ec8cdb9b2488a6f411"
-  integrity sha512-+VHSa84CRjm2s+KZWYxIDnI+NokcLsZHOSpRtg5nBFmnVfh6RPmPaFd5TN922Cfrm2i85kNoQtLiapALe26b5w==
+solhint@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.2.3.tgz#deb96dc01e86dad69eb482d848b4e25dd1fca080"
+  integrity sha512-w8prJP3kaf3G9hkmH5RmkCanvTULHWpdn+t4MieMEMZDhC2gFoUbRjS0TmslgxzGIItoOtP/J5PvU0FrvC08wA==
   dependencies:
     "@solidity-parser/parser" "^0.20.2"
     ajv "^8.18.0"
-    ajv-errors "^3.0.0"
     ast-parents "^0.0.1"
     better-ajv-errors "^2.0.2"
     chalk "^4.1.2"
