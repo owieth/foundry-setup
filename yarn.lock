@@ -619,10 +619,10 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-solhint@^6.2.3:
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.2.3.tgz#deb96dc01e86dad69eb482d848b4e25dd1fca080"
-  integrity sha512-w8prJP3kaf3G9hkmH5RmkCanvTULHWpdn+t4MieMEMZDhC2gFoUbRjS0TmslgxzGIItoOtP/J5PvU0FrvC08wA==
+solhint@^6.2.4:
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/solhint/-/solhint-6.2.4.tgz#57837204be335074ec488d999293420fda651e1c"
+  integrity sha512-2hCfsDGcCit/4Ue0Bf3HxalxEaHM/rfoSf3rMVAQQ5NWWcVPS0F+RSqQzMEPc8Ta7r5L3DeaKyzmbjD5B2fUdg==
   dependencies:
     "@solidity-parser/parser" "^0.20.2"
     ajv "^8.18.0"
